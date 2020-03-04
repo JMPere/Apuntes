@@ -1,0 +1,47 @@
+boletin1.ej16
+
+addi $3, $2, 400	;$3<-$2 + 400		c)	IF  ID  E  M  W
+loop: lw $1, 0($2)		;$1<-M[$2+0]		    IF  ID E  M  W
+	addi $1, $1, 1		;$1<-$1+1		        IF -  -  ID  E  M  W
+	sw $1, 0($2)		;M[$2+0]<-$1		                 IF  -  -  ID  E   M  W
+	addi $2, $2, 4		;$2<-$2+4				 	   IF  ID  E  M  W
+	sub $4, $3, $2								       IF  -  -  -  ID  E  M  W
+	bne $4, $0, loop	;jump si $0 no = $4						    IF  -  -  ID  E  M  W
+													      -   IF (lw $1, 0($2))
+
+Total de bloqueos: 999 = (100 saltos de bucles * 10 bloqueos - 1 de control)
+
+a) sumar al vector 0($2) una unidad más a caba elemento
+b) 100
+c)nº ciclos = nº instr + bloqueos
+
+nº instr = 1 + 6*100 = 601
+nº bloqueos datos = 8(columnas de bloqueos de datos)*100=800
+nº bloqueos control = 99
+nº ciclos = 601+800+99=1500
+CPI = 1500/601 = 2,49 
+
+d)	(* -> BYPASS)
+
+addi $3, $2, 400	;$3<-$2 + 400			IF  ID  E  M  W
+loop: lw $1, 0($2)		;$1<-M[$2+0]		    IF  ID E  M*  W
+	addi $1, $1, 1		;$1<-$1+1		        IF ID - *E   M   W
+	sw $1, 0($2)		;M[$2+0]<-$1		           IF -  ID  E   M  W
+	addi $2, $2, 4		;$2<-$2+4				 IF  ID  E*  M  W
+										   ($2)
+	sub $4, $3, $2							     IF  ID  *E*  M   W			
+	bne $4, $0, loop	;jump si $0 no = $4				 IF   -  *ID E  M  W
+										          -  IF
+
+Nº ciclos = nº instrucciones + bloqueos
+
+nº instr = 601
+nº bloqueos de datos = 2 * 100 = 200
+nº bloqueos control = 99
+nº ciclos = 601 + 200 + 99 =900
+CPI = 900/601 = 1,497
+
+Aceleración = (nºinstr * CPI(lento)*T)/(nº instr*CPI(rapido)*T) || en el mismo pc => Aceleración = CPI(lento)/CPI(rapido)
+
+Aceleración = 2,49/1,5 = 1,66
+mejora = (1,66-1)*100 = 66% mejor MIPS con bypass
