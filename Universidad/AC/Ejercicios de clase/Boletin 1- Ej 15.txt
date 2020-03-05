@@ -1,0 +1,13 @@
+Boletin 1 - Ej 15
+
+a) 1º hay un sumador en la etapa IF para calcular PC + 4
+   2º ALU1
+   3º ALU2
+b) 
+			 ^       |       |
+			 |ALU1   vALU2   vALU2
+ALU MEM tipo R: ________ Rd   ,Rf1,     Rf2
+
+			|   |   |
+			|   |   |
+ALU MEM TIPO M: ________Rd, 

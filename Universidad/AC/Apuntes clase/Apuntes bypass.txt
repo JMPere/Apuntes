@@ -1,0 +1,32 @@
+MIPS seg + bypass + resuelve salto en ID
+Analizar cuando se necesitan y generan datos cada tipo de instr
+
+		       ^   |    |
+		       |E  vE	vE
+-Aritmeticas. ________Rd, Rf1, Rf2
+
+-Referencia memoria:					   |   destino
+		       ^   |    		  Origen   |  (necesita)
+		       |M  vE			(produzca) |	  ID	 E	M		
+	load:_________Rd, d(Rf1)		___________|__________|_______|___________
+						           |*1        |*3     |*6
+		       |   |    		    E	   | 	 1    |	  0   |    0
+		       vM  vE			___________|__________|_______|___________
+	Store:________Rf1, d(Rf2)			   |*2        |*4     |*%
+						    M  	   |	 2    |	  1   |    0	
+		       |    |    			   |          |       |
+		       vID  vID				
+-Salto condicional:___Rf1, Rf2, etiq			
+
+
+*1 add $1., $2, $3	IF ID E* M  W
+bne $1., $0, etiq	   IF - *ID M W
+
+*4 lw $4, 0($2)		IF  ID  E  M*  W 
+   add $10, $4, $0	    IF  ID -  *E  M  W
+
+*5 lw $2, 0($10)	IF  ID  E  M*  W
+   sw $2, 0($11)	    IF  ID E  *M  W
+
+*6 add $10, $4, $0
+   sw $10, 0($2)
