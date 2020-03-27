@@ -1,0 +1,15 @@
+	addi $10, $0, 0 ; 1ª dirección de X
+	addi $20, $10, 80 ; 1ª dirección de Y
+	addi $30, $20, 156 ; última dir. de Z
+buc:lw $11, 0($10) ; X[i]
+	lw $21, 0($20) ; Y[i]
+	sll $11, $11, 3 ; multiplicación por 8
+	addi $20, $20, 4 ; incremento índice Y
+	sub $11, $11, $21 ; resta
+	sw $11, 0($30) ; escritura en Z
+	addi $30, $30, -4 ; decremento índice Z
+	slt $1, $20, $30
+	addi $10, $10, 4 ; incremento índice X
+	bne $1, $0, buc
+	(SALTO DE CONTROL)
+	sw $0, 0($10)
