@@ -1,0 +1,36 @@
+
+programa : variable asignaciones ;
+
+variables : VARIABLES (var)* ;
+
+var : TIPO nombres_variables PYC ;
+
+nombres_variables : VAR (COMA VAR)* ;
+
+asignaciones : ASIGNACIONES (asignacion)* ;
+
+asignacion : VAR IGUAL expresion PYC;
+
+expresion : expresion_entera | expresion_booleana | expresion_lista
+
+expresion_entera : NUM
+                | VAR
+                | (MAS | POR | MENOS) PA expresion_entera COMA expresion_entera PC
+                ;
+
+expresion_booleana : TRUE
+                    | FALSE
+                    | (O | Y) PA expresion_booleana COMA expresion_booleana PC
+                    | NOT PA expresion_booleana PC
+
+expresion_lista : CA (expr)? CC
+
+expr :  expresion_lista_entera | expresion_lista_boobleana
+        | expresion_lista_hibrida
+
+expresion_lista_entera: VAR
+                        | APPEND PA expresion_lista_entera COMA expresion_lista_entera PC;
+
+expresion_lista_booleana : TRUE
+                           | FALSE
+                           | expresion_booleana
