@@ -1,0 +1,14 @@
+PROGRAMA
+VARIABLES
+   x,i:NUM;
+   s:SEQ(NUM);
+SUBPROGRAMAS
+VARIABLES
+   j:NUM;
+INSTRUCCIONES
+   x=0;
+INSTRUCCIONES
+   i=-2;
+   i,g=mayor(5);
+   x=1+1;
+   s=[1,2,3];

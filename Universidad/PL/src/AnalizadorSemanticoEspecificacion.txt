@@ -1,0 +1,27 @@
+La declaración de una variable no asigna valor a esta.
+
+Necesitaremos un alamacen en el que tendremos las variables
+que si tenemos declaradas.
+
+Metodo de comprobacion de variable, para ver si resulta o no.
+    -Comprobar si el tipo es correcto dentro de este metodo.
+
+"Almacén donde tendra la siguiente forma. (Nombre de var,Tipo de varible)"
+
+Metodos a realizar: Comprobar si un secuencia es vacía. Devolver la ultm posicion
+de una sec vacía.
+
+Expresiones con distintos tipos no se pueden combinar.
+    (Metodo que recorre la expresion y va añadiendo cada variable (su tipo) a una lista
+    una vez que lo tiene todos, busca si hay algun tipo diferente al resto, es una comprobación)
+    IMPORTANTE tipo y NO valor.
+
+Asignación, alamcenar cada var con su correspondiente valor y tipo.
+Clave: nombre var, y valor: [tipo,valor].
+
+no admite la asignación de expresiones sin valor a una variable.
+Metodo que recorra la expresion y si existe alguna variable nula, de error.
+
+Preguntar:La evaluación de una condición puede tomar tres posibles
+valores: verdadero, falso e indefinido.
+

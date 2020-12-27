@@ -1,0 +1,160 @@
+DECISION DE DISEÑO SEGUN ENUNCIADO 1:
+Un programa está definido por 3 bloques, precedidos de la palabra reservada PROGRAMA. Estos bloques son:
+-Variables
+-Subprogramas
+-Instrucciones
+
+programa: PROGRAMA variables subprogramas instrucciones;
+
+DECISION DE DISEÑO SEGUN ENUNCIADO 2:
+En el bloque llamado variables (precedido por la palabra reservada VARIABLES) vienen todas las
+declaraciones de variables a usar en el programa. Esto no asigna valor a las variables (valor indefinido)?
+
+variables: VARIABLES (vars_decla PyC)+;
+
+vars_decla: IDENT (COMA IDENT)* DP tipo;
+
+DECISION DE DISEÑO NUESTRA 1:
+Para simplificar la definicion de secuencia, hemos decidido dividir los tipos en dos bloques, uno para las
+secuencias y otro para los tipos simples.
+
+DECISION DE DISEÑO NUESTRA 2:
+No puede haber secuencias de secuencias. Esto lo hemos hecho así para simplificar el semántico, ya que
+no podemos mezclar tipos
+
+
+tipo: TIPO_SEC PA tipo2 PC
+    | tipo2
+    ;
+
+tipo2: (MENOS)? TIPO_NUM
+     | TIPO_LOG
+     ;
+
+DECISION DE DISEÑO SEGUN ENUNCIADO 3:
+En el bloque subprogramas podemos encontrarnos funciones o procedimientos.
+Las funciones empiezan por la palabra reservada FUNCTION y terminan con la palabra reservado FFUNCTION, de igual modo
+sucede con la palabras reservadas PROCEDIMIENTO Y FPROCEDIMIENTO.
+
+subprogramas: FUNCION funciones FFUNCION
+            | PROCEDIMIENTO procedimientos FPROCEDIMIENTO;
+
+DECISION DE DISEÑO SEGUN ENUNCIADO 4:
+Las funciones estan compuestas por la definición de una función un cojunto de variables
+y un bloque de instrucciones.
+
+funciones: def_funcion variables instrucciones;
+
+DECISION DE DISEÑO NUESTRA 3:
+Para diferenciar las variables o IDENT de los nombres de funciones y procedimientos,
+estos se van a llamar CADENA, que a su vez esta definido en el léxico.
+
+def_funcion: CADENA PA (tipo IDENT)* PC DEV PA tipo IDENT (COMA tipo IDENT)* PC;
+
+Procedimientos está implementado de manera similiar a funciones.
+
+procedimientos: def_procedimiento variables instrucciones;
+
+def_procedimiento: CADENA PA (tipo IDENT (COMA tipo IDENT)*)? PC;
+
+DECISION DE DISEÑO SEGUN ENUNCIADO 5:
+El bloque instrucciones empieza por la palabra resrevada INSTRUCCIONES,
+y contiene al menos un tipo de instrucción. A saber: asignacion, condicional, iteracion...
+
+DECISION DE DISEÑO NUESTRA 4:
+Incluimos DEV como un tipo de instrucción, aunque no venía definida en el enunciado.
+
+
+instrucciones:INSTRUCCIONES (asignacion
+             | condicional
+             | iteracion
+             | RUPTURA
+             | llamada
+             | aserto
+             | DEV expresion (COMA expresion)* PyC)+
+             ;
+
+DECISION DE DISEÑO SEGUN ENUNCIADO 6:
+Las asignaciones pueden ser individuales o múltiples.
+
+asignacion: IDENT (COMA IDENT)* ASIG expresion (COMA expresion)*;
+
+DECISION DE DISEÑO NUESTRA 5:
+Decidimos que a una variable se le podía asignar algo más que un tipo (entero,booleano...), y a ese valor lo llamamos expresión.
+Distinguimos tres tipos distintos de expresiones:
+expresion_entera
+expresion_lista
+expresion_boolean
+
+expresion: expresion_entera
+         | expresion_lista
+         | expresion_booleana
+         ;
+
+DECISION DE DISEÑO NUESTRA 6:
+Las expresiones enteras contiene las operaciones aritméticas, en la que se da preferencia a la multiplicación, ademas puede ser llamada (función
+que devuelve uno o varios valores enteros), un número, una variable o un valor dentro de una secuencia.
+
+expresion_entera: expresion_entera (POR|MAS|MENOS) expresion_entera
+                | llamada
+                | NUM
+                | IDENT
+                | IDENT CA NUM CC
+                ;
+
+DECISION DE DISEÑO NUESTRA 7:
+Las expresiones listas pueden ser una llamada (función que devuelve un tipo secuencia), una lista de números, lista de booleanos,
+lista vacía o un variable.
+
+expresion_lista: llamada
+               | CA (NUM)+ CC
+               | CA (LOG)+ CC
+               | IDENT
+               | CA CC
+               ;
+DECISION DE DISEÑO NUESTRA 8:
+Las expresiones booleanas pueden ser una llamada (funcion que devuelve un tipo LOG), una variable o un tipo LOG.
+
+expresion_booleana: llamada
+                  | IDENT
+                  | LOG
+                  ;
+
+DECISION DE DISEÑO SEGUN ENUNCIADO 7:
+El bloque condicional viene precedido por la palabra reservada SI seguida de una condición entre paréntesis, la palabra reservada ENTONCES
+y un bloque de instrucciones. Es posible que el bloque instrucciones venga seguido de la palabra reservada SINO y un bloque de instrucciones
+que se ejecutaría en caso de no cumplirse la condición inicial. El bloque condicional terminaría con la palabra reservado FSI.
+
+condicional: SI PA condicion PC ENTONCES instrucciones (SINO instrucciones)? FSI;
+
+DECISION DE DISEÑO NUESTRA 9:
+En las condiciones le damos prioridad al NOT sobre el AND o OR.
+Nuestra condicion puede ser una conjunción o disjunción de condiciones, además puede ser también una comparación de expresiones o
+el caso base (cierto o falso).
+Para simplificar visualmente el programa, los operadores de la comparación de expresiones (<, >, ==...), los hemos colocado en un bloque a parte.
+
+condicion: NOT condicion // if not variable
+         | condicion (AND|OR) condicion
+         | expresion comparador expresion
+         | (C_CIERTO|C_FALSO);
+
+comparador:(IGUAL_IGUAL|DISTINTO|MENOR_QUE|MAYOR_QUE|MENOR_IGUAL|MAYOR_IGUAL);
+
+DECISION DE DISEÑO SEGUN ENUNCIADO 8:
+El bloque iteración comienza con la palabra reservada MIENTRAS seguido de una condición entre paréntesis, la palabra reservada HACER
+seguida de un bloque instrucciones que podría estar precedido de una función de avance, este bloque acaba con la palabra reservada FMIENTRAS.
+
+iteracion: MIENTRAS PA condicion PC HACER  (funcion_avance)? instrucciones FMIENTRAS;
+
+DECISION DE DISEÑO SEGUN ENUNCIADO 9:
+Función de avance definido por las instrucciones del enunciado.
+
+funcion_avance: LLA AVANCE DP llamada LLC;
+
+aserto: LLA (LOG|cuantif_exist|cuantif_universal) LLC;
+
+cuantif_universal: PARATODO PA IDENT DP CA expresion_entera COMA expresion_entera CC COMA condicion PC;
+
+cuantif_exist: EXISTE PA IDENT DP CA expresion_entera COMA expresion_entera CC COMA condicion PC;
+
+llamada: CADENA PA (expresion)? (COMA (expresion))* PC;
