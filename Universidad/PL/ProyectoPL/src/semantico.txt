@@ -1,0 +1,217 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+
+public class Anasem_visitor  extends AnasintBaseVisitor<Object> {
+    //funcion que asigna identificadores a los tipos
+    public HashMap<String, String> almacen = new HashMap<>();
+    public HashMap<String, List> subprogramas = new HashMap<>();
+
+    public Integer visitVariables(Anasint.VariablesContext ctx) {
+
+        for (int i = 0; i < ctx.decl_vars().size(); i++) {
+
+            visit(ctx.decl_vars(i));
+        }
+        System.out.println(almacen);
+        return 1;
+    }
+
+
+    public String visitTipo(Anasint.TipoContext ctx) {
+
+        return ctx.getText();
+
+    }
+
+    public Integer visitDecl_vars(Anasint.Decl_varsContext ctx) {
+        String tipo = (String) visit(ctx.tipo());
+        List<String> nv = (List<String>) visit(ctx.nombre_vars());
+
+        for (String a : nv) {
+
+            almacen.put(a, tipo);
+        }
+
+        return 1;
+    }
+    // NUM -- 30 LOG --31 SEQ(NUM) 100
+
+    public List<String> visitNombre_vars(Anasint.Nombre_varsContext ctx) {
+
+        List<String> aux = new ArrayList<>();
+        for (int i = 0; i < ctx.IDENT().size(); i++) {
+
+            aux.add(ctx.IDENT(i).getText());
+
+        }
+
+        return aux;
+
+    }
+
+    public Integer visitSubprogramas(Anasint.SubprogramasContext ctx) {
+        for (int i = 0; i < ctx.subp().size(); i++) {
+
+            visit(ctx.subp(i));
+        }
+        System.out.println(subprogramas);
+        return 1;
+    }
+
+    public Integer visitSubp(Anasint.SubpContext ctx) {
+
+        if (ctx.getChild(0).getText().charAt(0) == 'F') {
+            visit(ctx.funcion());
+
+        } else {
+            visit(ctx.procedimiento());
+        }
+
+        //System.out.println(ctx.getChild(0).getText().charAt(0) );
+
+        return 1;
+    }
+
+    public Integer visitFuncion(Anasint.FuncionContext ctx) {
+        visit(ctx.cabecera_f());
+        return 1;
+    }
+
+    public Integer visitCabecera_f(Anasint.Cabecera_fContext ctx) { //diferenciar entre parametros de entrada y de salida
+        List<String> e = new ArrayList<>();
+        List<String> s = new ArrayList<>(); //problema pq es opcional, en este caso no existe e intenta acceder
+        List<Object> valor = new ArrayList<>();
+        if (ctx.children.contains(ctx.parametros_e())) {
+            e = (List<String>) visit(ctx.parametros_e());
+        }
+        if (ctx.children.contains(ctx.parametros_s())) {
+            s = (List<String>) visit(ctx.parametros_s());
+        }
+        valor.add("FUNCION");
+        valor.add(e);
+        valor.add(s);
+        subprogramas.put(ctx.IDENT().getText(), valor);
+
+        return 1;
+    }
+
+    public List<String> visitParametros_e(Anasint.Parametros_eContext ctx) {
+
+        List<String> aux = new ArrayList<>();
+
+        for (int i = 0; i < ctx.tipo().size(); i++) {
+
+            aux.add((String) visit(ctx.tipo(i)));
+        }
+        return aux;
+    }
+
+    public List<String> visitParametros_s(Anasint.Parametros_sContext ctx) {
+
+        List<String> aux = new ArrayList<>();
+
+        for (int i = 0; i < ctx.tipo().size(); i++) {
+
+            aux.add((String) visit(ctx.tipo(i)));
+        }
+        return aux;
+    }
+
+    public Integer visitProcedimiento(Anasint.ProcedimientoContext ctx) {
+        visit(ctx.cabecera_P());
+        return 1;
+    }
+
+    public Integer visitCabecera_P(Anasint.Cabecera_PContext ctx) { //diferenciar entre parametros de entrada y de salida
+        List<String> e = new ArrayList<>();
+        List<String> s = new ArrayList<>(); //problema pq es opcional, en este caso no existe e intenta acceder
+        List<Object> valor = new ArrayList<>();
+        if (ctx.children.contains(ctx.parametros_e())) {
+            e = (List<String>) visit(ctx.parametros_e());
+        }
+        valor.add("PROCEDIMIENTO");
+        valor.add(e);
+        valor.add(s);
+        subprogramas.put(ctx.IDENT().getText(), valor);
+
+        return 1;
+    }
+
+    public Integer visitExpr(Anasint.ExprContext ctx) {
+        visit(ctx.llamada_funcion());
+        return 1;
+    }
+
+    public Integer visitLlamada_funcion(Anasint.Llamada_funcionContext ctx) {
+        String s = "";
+
+        if (subprogramas.containsKey(ctx.IDENT(0).getText())) {
+
+            List<String> parametros_entrada = (List<String>) subprogramas.get(ctx.IDENT(0).getText()).get(1);
+            Integer numero_parametros_en_llamada = ctx.NUM().size() + ctx.IDENT().size() - 1; //-1 para eliminar el que cuenta como ident de la funcion
+
+            if (ctx.getParent().getText() == "expr") {
+                List<String> param_s = (List<String>) subprogramas.get(ctx.IDENT(0)).get(2);
+                int numero_param = param_s.size();
+                if (numero_param != 1) {
+                    System.out.println("ERROR, el numero de parámetros devueltos por la funcion:" + ctx.IDENT() + "es distinto que 1 ");
+                } else {
+                    System.out.println("NO ERROR");
+                }
+            }
+            List<String> parametros_funcion = new ArrayList<>(); //parametros de la llamada a la funcion
+
+            for( int i = 1; i< ctx.children.size(); i++){
+                if ( !ctx.children.get(i).getText().equals("(") && !ctx.children.get(i).getText().equals(")") && !ctx.children.get(i).getText().equals(",")){
+                    parametros_funcion.add(ctx.children.get(i).getText());
+                }
+            }
+            //System.out.println(parametros_funcion);
+            //System.out.println(parametros_entrada);
+            if (parametros_entrada.size() == numero_parametros_en_llamada) {
+
+                for (int j = 0; j < parametros_funcion.size(); j++) {
+
+                    if (esNumero(parametros_funcion.get(j)) ) {
+                        if (!parametros_entrada.get(j).equals("NUM")) {
+                            System.out.println("ERROR, el parametro " + parametros_funcion.get(j) + " no corresponde al tipo");
+                        }else{
+                            System.out.println("NO ERROR");
+                        }
+                    } else {                                                                   //no es un numero, es una variable, debe estar declarada
+                        if (almacen.containsKey(parametros_funcion.get(j))) {                         //declarada, debe corresponder en tipo
+                            if (almacen.get(parametros_funcion.get(j)) == parametros_entrada.get(j)) {
+                                System.out.println("NO ERROR");
+                            }
+                        } else if (!almacen.containsKey(parametros_funcion.get(j))) {
+                            System.out.println("ERROR, la variable invocada " + parametros_funcion.get(j) + " no esta declarada");
+                        }
+
+                    }
+                }
+            } else {
+                System.out.println("ERROR, la llamada a la función: " + ctx.IDENT(0) + " no corresponde con el numero de parametros");
+            }
+
+        } else {
+            System.out.println("ERROR, la función: " + ctx.IDENT(0) + " no está definida");
+        }
+        return 1;
+    }
+    public static boolean esNumero(String cadena) {
+
+        boolean resultado;
+
+        try {
+            Integer.parseInt(cadena);
+            resultado = true;
+        } catch (NumberFormatException excepcion) {
+            resultado = false;
+        }
+
+        return resultado;
+    }
+}

@@ -1,0 +1,71 @@
+lexer grammar Analex;
+
+BLANCO: ' ' ->skip;
+TABULADOR: '\t'->skip;
+FIN_LINEA: '\r'?'\n' ->skip;
+
+INSTRUCCIONES:'INSTRUCCIONES';
+SUBPROGRAMAS:'SUBPROGRAMAS';
+C_CIERTO:'cierto';
+C_FALSO:'falso';
+TIPO_SEC: 'SEQ';
+TIPO_LOG: 'LOG';
+TIPO_NUM: 'NUM';
+PROGRAMA:'PROGRAMA';
+ENTONCES:'entonces';
+SINO:'sino';
+FSI:'fsi';
+VARIABLES:'VARIABLES';
+SI:'si';
+MIENTRAS:'mientras';
+HACER:'hacer';
+FMIENTRAS:'fmientras';
+RUPTURA:'ruptura';
+VERDADERO: 'T';
+FALSO: 'F';
+FUNCION: 'FUNCION';
+FFUNCION: 'FFUNCION';
+PROCEDIMIENTO: 'PROCEDIMIENTO';
+FPROCEDIMIENTO: 'FPROCEDIMIENTO';
+DEV: 'dev';
+AVANCE: 'avance';
+PARATODO: 'PARATODO';
+EXISTE: 'EXISTE';
+NULL: 'Null';
+
+fragment DIGITO: [0-9];
+fragment LETRA_MIN: [a-z];
+fragment LETRA_MAX: [A-Z];
+
+IDENT: LETRA_MIN (LETRA|DIGITO|BB)*;
+LETRA: (LETRA_MIN|LETRA_MAX);
+//CADENA: LETRA_MIN (LETRA|BB)*(BB NUM)?;
+NUM: (DIGITO)+;
+LOG: (VERDADERO|FALSO);
+
+PyC: ';';
+COMA: ',';
+DP: ':';
+PA: '(';
+PC: ')';
+BB: '_';
+ASIG: '=';
+LLA: '{';
+LLC: '}';
+CA: '[';
+CC: ']';
+MAS: '+';
+MENOS: '-';
+POR: '*';
+NOT: '!';
+IGUAL_IGUAL: '==';
+DISTINTO: '!=';
+MENOR_QUE: '<';
+MAYOR_QUE: '>';
+MENOR_IGUAL: '<=';
+MAYOR_IGUAL: '>=';
+AND: '&&';
+OR: '||';
+
+COMENTARIO_BLOQUE : '/*' .*? '*/' -> skip ;
+COMENTARIO_LINEA : '//' .*? FIN_LINEA -> skip ;

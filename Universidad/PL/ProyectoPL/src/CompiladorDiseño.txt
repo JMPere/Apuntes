@@ -1,0 +1,28 @@
+(1) Para traducir de forma correcta, primero debemos definir el esquema de traducción de nuestro lenguaje
+
+public class _Programa{
+    public static void main(String[]args){
+        (a) generar código para la declaración de las variables (deben ser igual a null)
+        (b) generar código para las instrucciones
+        (c) generar código para subprogramas, que usan tanto variables como instrucciones
+    }
+}
+
+    (a) generar código para la declaración de variables (necesito su tipo y su valor) como ej java el tipo Integer y el
+    tipo Boolean no pueden operarse, me vale solo con almacenar el valor de la variable sabiendo su tipo.
+
+    VARIABLES
+    i,max,min:NUM; ---> Integer i, max, min
+    s:SEQ(NUM);    ---> List<Integer> s
+    s2:SEQ(LOG);   ---> List<Boolean> s2
+    t,f:LOG;       ---> Boolean t,f
+
+    almacen_definiciones=[(i,null),(max,null),(min,null),(s,[]),(s2,[]),(t,null),(f,null)] --->mapa para no tener repeticiones
+
+    (b) generar código para la instrucciones y subprogramas
+        (b.1) la asignación no genera código java sino que actualiza almacen_definiciones
+
+        i=0;                  ---> almacen_definiciones=[(i,0),(max,null),(min,null),(s,[null]),(s2,[null]),(t,null),(f,null)]
+        s = [3,4,2,7,9,0,11]; ---> almacen_definiciones=[(i,0),(max,null),(min,null),(s,[3,4,2,7,9,0,11]),(s2,[null]),(t,null),(f,null)]
+
+        Hay que tener cuidado con los ciclos
