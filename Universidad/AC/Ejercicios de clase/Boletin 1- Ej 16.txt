@@ -5,7 +5,7 @@ loop: lw $1, 0($2)		;$1<-M[$2+0]		    IF  ID E  M  W
 	addi $1, $1, 1		;$1<-$1+1		        IF -  -  ID  E  M  W
 	sw $1, 0($2)		;M[$2+0]<-$1		                 IF  -  -  ID  E   M  W
 	addi $2, $2, 4		;$2<-$2+4				 	   IF  ID  E  M  W
-	sub $4, $3, $2								       IF  -  -  -  ID  E  M  W
+	sub $4, $3, $2								       IF  -  -     ID  E  M  W
 	bne $4, $0, loop	;jump si $0 no = $4						    IF  -  -  ID  E  M  W
 													      -   IF (lw $1, 0($2))
 
