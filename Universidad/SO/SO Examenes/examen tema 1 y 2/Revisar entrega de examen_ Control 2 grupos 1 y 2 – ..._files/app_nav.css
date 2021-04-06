@@ -1,0 +1,2453 @@
+/* @group TOP FRAME
+----------------------------------------------- */
+
+/* @group TOP FRAME LAYOUT */
+
+/*Branding image container.*/
+
+/*Application tabs (top frame)*/
+
+table.bouncer {
+    width: 100%;
+}
+
+table.bouncer td {
+    padding:0;
+}
+
+.brandingImgWrap {
+    overflow:hidden;
+}
+
+/*Branding image is hidden when compact tabs are used*/
+.topTabs-compact .bannerImage, .topTabs-compact .brandingImgWrap {
+    display:none;
+}
+
+/*Compact tabs*/
+.topTabs-compact {
+    position:relative;
+}
+
+/*Center aligned tabs*/
+.topTabs .tabWrapper-center .appTabs, .topTabs-compact .tabWrapper-center .appTabs {
+    margin: 0 auto;
+}
+
+/*Right aligned tabs.*/
+.topTabs .tabWrapper-right .appTabs, .topTabs-compact .tabWrapper-right .appTabs {
+    float: right;
+}
+
+#topFrame /*@branding - do not remove*/,
+    /*---*/
+.bgBanner {
+    background-position: 0 0px;
+    background-repeat: no-repeat;
+    color:#CCCCCC;
+}
+
+.brandingImgWrap {
+    height:50px;
+}
+
+.brandingImgWrap a {
+    display: inline-block;
+    position: absolute;
+}
+
+.brandingImgWrap a:focus {
+    outline-color: #CCC;
+}
+
+.bannerImage {
+    max-height: 35px;
+}
+
+.brandingImgWrap img[src*="header_institution"] {
+    left: 20px;
+    max-height: 60px;
+    position: absolute;
+    top: 0px;
+    z-index: 9001;
+}
+
+.brandingImgWrap img {
+    left: 20px;
+    max-height: 50px;
+    max-width: 140px;
+    position: absolute;
+    top: 7px;
+    z-index: 9001;
+}
+
+/*Branding image, hot spots and hot links are hidden when compact tabs are used*/
+.topTabs-compact .bannerImage, .topTabs-compact .brandingImgWrap, .topTabs-compact .hotItems {
+    display:none;
+}
+
+/*Nav*/
+.global-nav-bar-wrap {
+    background-color: #000;
+    width: 100%;
+    height: 0px;
+    background: #333;
+}
+
+/* from theme specific */
+/*Regular tabs*/
+.topTabs {
+    padding: 0;
+    background-color: #333; /*@pal*/
+    box-shadow: none;
+    color: #FFFFFF;
+    height: 100%;
+}
+
+
+/*Compact tabs*/
+.topTabs-compact {
+    height: 52px;
+}
+
+/*Tab wrapper*/
+.tabWrapper-left, .tabWrapper-center, .tabWrapper-right {
+    width: auto;
+    padding: 0px 28px;
+}
+
+/*Table that contains application tabs*/
+/*Regular tabs*/
+.appTabs {
+    width: auto;
+    position: relative;
+}
+
+.topTabs-compact .tabWrapper-left, .topTabs-compact .tabWrapper-center, .topTabs-compact .tabWrapper-right {
+    padding-top: 24px;
+}
+
+/* @end */
+
+/* @group APPLICATION TABS */
+
+/*Application tabs*/
+/*Regular tabs*/
+.appTabs a {
+    font-size:110%;
+    text-align:center;
+    display:block;
+    text-decoration:none;
+    padding: 10px 1.2em 19px;
+    color:#efefef;
+    color:rgba(255,255,255,0.9);
+    z-index:100;
+    white-space:nowrap;
+    position: relative;
+    border: 1px solid transparent;
+    border-width: 1px 1px 0;
+    -moz-border-radius: 3px 3px 0 0;
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+    font-size: 1.1rem;
+}
+
+/*@branding - do not remove*/
+#topTab {
+    background: transparent;
+    color:#efefef;
+}
+
+.appTabs a span {
+    border-bottom: 1px dotted transparent;
+    padding-bottom: 1px;
+}
+
+.topTabs-compact .appTabs a span {
+    padding-bottom: 0;
+}
+
+
+.appTabs a:hover, .appTabs a:focus {
+    color:#fff;
+}
+
+.appTabs a:hover span, .appTabs a:focus span {
+    border: 0px !important;
+    color: #fff;
+
+}
+
+/*@branding - do not remove*/
+#topTabActive,
+.appTabs .active a, .appTabs .active a:hover, .appTabs .active a:focus {
+    color:#fff;
+    font-weight:bold;
+    text-shadow: 0 0 6px #000;
+    z-index:100;
+}
+
+.appTabs .active a  span, .appTabs .active a:hover span, .appTabs .active a:focus span {
+    border: 0;
+}
+
+.appTabs .active .hideoff,
+.appTabs .active a:hover .hideoff,
+.appTabs .active a:focus .hideoff,
+.toppTabs-compact .appTabs .active .hideoff,
+.toppTabs-compact .appTabs .active a:hover .hideoff,
+.toppTabs-compact .appTabs .active a:focus .hideoff {
+    bottom: 0;
+    border-left:0px solid transparent;
+    border-right:0px solid transparent;
+    border-top:0;
+    margin-left: -12px;
+    bottom: 0px;
+    line-height: 0;
+    left: 50%;
+    top: auto;
+    color: transparent;
+    font-size: 0;
+    z-index: 100;
+
+}
+
+.topTabs-compact .appTabs .active .hideoff {
+    display: none;
+}
+
+.topTabs-compact .appTabs .active .hideoff,
+.topTabs-compact .appTabs .active a:hover .hideoff,
+.topTabs-compact .appTabs .active a:focus .hideoff {
+    border-width: 0 7px 7px;
+    margin-left: -7px;
+}
+
+.topTabs-compact .appTabs a,
+.topTabs-compact  .appTabs .active a:hover,
+.topTabs-compact  .appTabs .active a:focus {
+    font-size: 95%;
+    padding: 0.4em 1em .7em;
+}
+
+.appTabs a {
+    color: #cdcdcd;
+    -moz-border-radius: 0px 0px 0 0;
+    -webkit-border-radius: 0px 0px 0 0;
+    border-radius: 0px 0px 0 0;
+}
+
+.appTabs a:hover span,
+.appTabs a:focus span {
+    border-bottom: 1px double #FFF;
+}
+
+/*@branding - do not remove*/
+#topTab {
+    background: transparent;
+    color: #666;
+}
+
+.appTabs a span {
+    padding-bottom: 1px;
+    border-bottom: 0px;
+}
+
+.appTabs a:hover, .appTabs a:focus {
+    color: #666;
+}
+
+/*@branding - do not remove*/
+#topTabActive,
+.appTabs .active a, .appTabs .active a:hover, .appTabs .active a:focus {
+    font-weight: bold;
+    text-shadow: none;
+    color: #FFFFFF;
+}
+
+.appTabs td.active {
+    border-bottom: 3px solid #c56fd5;
+}
+
+.appTabs td {
+    padding-bottom: 14px !important
+}
+
+#topTabActive, .appTabs .active a, .appTabs .active a:hover, .appTabs .active a:focus {
+    color: #fff;
+}
+
+.appTabs .active .hideoff,
+.appTabs .active a:hover .hideoff,
+.appTabs .active a:focus .hideoff,
+.toppTabs-compact .appTabs .active .hideoff,
+.toppTabs-compact .appTabs .active a:hover .hideoff,
+.toppTabs-compact .appTabs .active a:focus .hideoff {
+    border-bottom: 14px solid #fff;
+}
+
+
+/*Rounding options*/
+.round1 a {
+    -moz-border-radius:3px 3px 0 0;
+    -webkit-border-radius:3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+}
+
+.round2 a {
+    -moz-border-radius:12px 12px 0 0;
+    -webkit-border-radius:12px 12px 0 0;
+    border-radius:12px 12px 0 0;
+}
+
+/* @end */
+
+
+/* @group TOP FRAME LINKS (HOME, HELP, LOGOUT)
+----------------------------------------------- */
+
+/*Top frame links*/
+
+.topGlobalLinks {
+    background-color: rgba(0,0,0, 0.15);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000020, endColorstr=#33000020";
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000020, endColorstr=#33000020);
+}
+
+.topGlobalLinks ul {
+    z-index: 1001
+}
+
+.topGlobalLinks  ul li {
+    color: #ccc;
+    display: inline-block;
+    margin: 0  0 0 -4px;
+}
+
+.topGlobalLinks ul li:first-child {
+    margin: 0;
+}
+
+.topGlobalLinks a {
+    display: inline-block;
+    color: #ccc;
+    text-align: left;
+    padding: 3px 5px;
+    text-indent: -10000px;
+    min-width: 18px;
+    overflow: hidden;
+    background: none!important;
+}
+
+.topGlobalLinks a .link-icon {
+    background-image: url(images/utilicons_sprite_rev.png);
+    background-repeat: no-repeat;
+    display: block;
+    float: right;
+    height: 16px;
+    width: 16px;
+    overflow: hidden;
+}
+
+.topGlobalLinks .home .link-icon {
+    background-position: -129px 0
+}
+
+.topGlobalLinks .home:hover .link-icon,
+.topGlobalLinks .home:focus .link-icon {
+    background-position: -129px -16px
+}
+
+.topGlobalLinks .logout .link-icon {
+    display: none
+}
+
+.topGlobalLinks .logout {
+    text-indent: 0;
+    padding: 2px 9px;
+    width: auto!important;
+}
+
+.topGlobalLinks .help .link-icon {
+    background-position: -145px 1px
+}
+
+.topGlobalLinks .help:hover .link-icon,
+.topGlobalLinks .help:focus .link-icon  {
+    background-position: -145px 1px
+}
+
+.topGlobalLinks a:hover,
+.topGlobalLinks a:focus {
+    color: #eee;
+    background-color: rgba(0,0,0, 0.25)!important;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#44000025, endColorstr=#44000025";
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#44000025, endColorstr=#44000025);
+}
+
+/* @end TOP FRAME LINKS*/
+
+/* @group TOP FRAME HOT ITEMS
+----------------------------------------------- */
+
+.hotItems {
+    position: relative;
+    margin-right: 3px;
+    width: 240px;
+    min-height: 28px;
+    color: #ddd;
+    text-align: center;
+    background-color: rgba(0,0,0, 0.20);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000020, endColorstr=#33000020";
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000020, endColorstr=#33000020);
+}
+
+.hotSpots {
+    max-height: 46px;
+    overflow: auto;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    padding: 3px 3px 5px;
+}
+
+.hotSpots li {
+    display: inline-block;
+    display: inline\9;/*IE8*/
+    padding: 0 0 2px;
+}
+
+.hotSpots a {
+    background: transparent;
+    color: #ddd;
+    display: inline-block;
+    padding: 0 6px 0 0;
+}
+
+.hotSpots li:after {
+    content: "\2022";
+    color: #999999;
+    position: relative;
+    right: 1px;
+}
+
+.hotSpots li:last-child:after {
+    content: none
+}
+
+.hotSpots a:hover,
+.hotSpots a:focus {
+    color: #eee;
+}
+
+/* @end TOP FRAME HOT*/
+
+/* // GLOBAL NAV // */
+/* these styles override the icons set on the Customize Brand page. This is specific to the 2012 theme */
+.bottom-buttons-home a.home {
+    background: transparent
+    url('/images/ci/mybb/mybb_nav_bottombuttons_sprite.png ') no-repeat
+    50% 6px;
+}
+
+.bottom-buttons-help a.help {
+    background: transparent
+    url('/images/ci/mybb/mybb_nav_bottombuttons_sprite.png ') no-repeat
+    50% -13px;
+}
+
+.bottom-buttons-logout a.logout {
+    background: transparent
+    url('/images/ci/mybb/mybb_nav_bottombuttons_sprite.png ') no-repeat
+    50% -33px;
+}
+
+.global-nav-bar a.logout-link, .global-nav-bar a.logout-link:hover, .global-nav-bar a.logout-link:focus {
+    background-image: url('/images/ci/mybb/mybb_nav_logout.png');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+}
+
+.global-nav-bar a.logout-link:hover, .global-nav-bar a.logout-link:focus {
+    background-position: 50% -22px;
+}
+/* // end GLOBAL NAV // */
+
+
+#quick_links_wrap {
+    width: 20px;
+    overflow: hidden;
+}
+
+#quick_links_wrap:hover {
+    width: 100px;
+    overflow: visible;
+    left: -10px;
+    background: #333;
+}
+
+#quick_links_wrap a {
+    position: absolute;
+    right: 0px;
+}
+
+#globalNavPageNavArea{
+    background:#333;
+}
+
+/* moved from theme 2106 css */
+
+.global-nav-bar-wrap {
+    background-color: #000;
+    width: 100%;
+    height: 0px;
+}
+
+.global-nav-bar {
+    margin: 0px 10px;
+}
+
+.topTabs .tabWrapper-right {
+    height: 66px;
+}
+
+.topTabs .tabWrapper-right .appTabs {
+    height: 100%;
+}
+
+/* Higher contrast outlines for dark backgorunds */
+/* manin/global navigation */
+.appTabs input:focus, .appTabs button:focus, .appTabs select:focus, .appTabs a:focus,
+/* my bb links and logout */
+.global-nav-bar input:focus, .global-nav-bar button:focus, .global-nav-bar  select:focus, .global-nav-bar  a:focus,
+/* mybb side nav */
+.mybb-tools input:focus, .mybb-tools button:focus, .mybb-tools  select:focus, .mybb-tools  a:focus,
+.mybb-div .side-nav input:focus, .mybb-div .side-nav button:focus, .mybb-div .side-nav select:focus, .mybb-div .side-nav a:focus,
+/* course menu */
+.navPalette input:focus, .navPalette button:focus, .navPalette select:focus, .navPalette a:focus,
+/* inline grading headers */
+.gradeHeader input:focus, .gradeHeader button:focus, .gradeHeader select:focus, .gradeHeader a:focus, 
+.gradingPanelHeader input:focus, .gradingPanelHeader button:focus, .gradingPanelHeader select:focus, .gradingPanelHeader a:focus,
+.inlineGrader .resizeControls input:focus, .inlineGrader .resizeControls button:focus, .inlineGrader .resizeControls select:focus, .inlineGrader .resizeControls a:focus  {
+    outline: 2px solid #e3b7eb;
+}
+
+/* @end TOP FRAME */
+
+
+@media only screen and (min-width:320px) and (max-width:1024px) {
+
+    /*hamburgers*/
+
+    .global-nav-bar-wrap { 
+        position: fixed;
+        z-index: 9009;
+    }
+    
+    #quick_links_wrap {
+        visibility: hidden;
+    }
+
+    .brandingImgWrap {
+        position: fixed;
+        width: 71px;
+        top: -3px;
+        left: 0px;
+        height: 47px !important;
+        z-index: 2000;
+    }
+
+    .brandingImgWrap img[src*="header_institution"] {
+        height: 38px;
+        width: 38px;
+        margin-left: 4px;
+    }
+
+    .brandingImgWrap img {
+        display: none;
+    }
+    
+    /*global nav*/
+
+    .global-nav-bar-wrap { 
+        position: fixed;
+        height: 35px;
+        padding-top: 9px;
+        background-color: transparent;
+    }
+
+    .mybb-shell .global-nav-bar-wrap {
+        background-color: #333;
+    }
+
+    .global-nav-bar-wrap-mobile-nav {
+        height: 33px;
+        width: auto;
+        top: 0px;
+        position: fixed;
+        visibility: visible;
+    }
+
+    .global-nav-bar {
+        position: relative;
+        width: 100%;
+        height: 44px;
+        margin: 0px;
+    }
+
+    #global-nav .nav-link.u_floatThis-right {
+        float: left;
+        width: 100%;
+        height: 75px;
+        color: transparent;
+    }
+
+
+    #global-nav .nav-link {
+        width: 30px;
+        box-sizing: border-box;
+        overflow: hidden;
+        color: transparent;
+        background: transparent;
+        box-sizing: border-box;
+        background-color: transparent;
+        padding-right: 22px;
+    }
+
+
+    #global-nav .global-top-avatar {
+        float: left;
+        height: 30px;
+        width: 30px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 49px;
+    }
+
+    #badgeTotal {
+        position: absolute;
+        top: 34px;
+        right: 43%;
+    }
+
+    .nav-link:hover, .nav-link:focus {
+        background-color: transparent;
+    }
+
+    .global-nav-bar.logout {
+        position: fixed;
+        top: 10px;
+        right: 5px;
+        height: 20px;
+        width: 30px;
+        left: auto;
+        overflow: hidden;
+    }
+
+    .global-nav-bar .logout-link {
+        width: 30px;
+        background: transparent;
+    }
+
+    .nav-link .badge {
+        position: relative;
+        top: auto;
+        right: auto;
+    }
+
+    .global-nav-bar .badge, 
+    .side-nav .menu-icon span.badge {
+        font-size: 11px;
+        height: 12px;
+        line-height: 12px;
+        margin-left: 0px;
+        padding: 4px 3px;
+        min-width: 12px;
+        height: auto;
+    }
+
+    div#global-nav > .hideoff {
+        width: 100%;
+        height: 44px;
+        left: 0px;
+        top: 11px;
+        font-size: 16px;
+        text-align: center;
+        color: #d8d3d3;
+    }
+
+    .global-toggle {
+        display: none;
+    }
+
+    #globalNavPageNavArea {
+        height: 44px;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 1000;
+        overflow: hidden;
+        background: #333;
+    }
+
+    #globalNavPageNavArea.main-nav-open {
+        overflow: visible;
+    }
+
+    .brandingImgWrap {
+        position: fixed;
+        width: 71px;
+        top: -3px;
+        left: 10px;
+        height: 47px !important;
+        z-index: 2000;
+    }
+
+    .brandingImgWrap img {
+        display: none;
+    }
+
+
+    .appTabs td {
+        padding-bottom: 0 !important;
+    }
+
+     /*top frame*/
+    .mobile-nav-menu-icon {
+        visibility: visible;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #fff;
+    }
+
+    .tabWrapper-left, 
+    .tabWrapper-center,
+    .tabWrapper-right {
+        max-height: 0px;
+        position: fixed;
+        top: 0px;
+        z-index: 9000;
+        background: #333;
+        -webkit-transition: height 300ms cubic-bezier(0.420, 0.000, 1.000, 1.000); /* Safari */
+        transition:  height 300ms cubic-bezier(0.420, 0.000, 1.000, 1.000);
+        height: 0px;
+        padding-top: 0px;
+    }
+
+    .main-nav-open .tabWrapper-left, 
+    .main-nav-open .tabWrapper-center,
+    .main-nav-open .tabWrapper-right {
+        top: 44px;
+    }
+
+    table.bouncer {
+        height: 44px;
+        background: #333;
+    }
+
+    table.bouncer td {
+        padding: 0;
+        width: 100%;
+        float: left;
+        height: 44px;
+    }
+
+    div[class^="topTabs"] div[class^="tabWrapper"]  .appTabs {
+        height: 0px;
+        max-height: 0px;
+        overflow: visible;
+        top: -1000px;
+    }
+    
+    .appTabs td.active {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        background: #333;
+    }
+
+    .mobile-menu-indicator-arrow {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 7px 7px 7px 7px;
+        border-color: #fff transparent transparent transparent;
+        position: absolute;
+        margin: auto;
+        top: 33px;
+        left: 50%;
+    }
+
+    .main-nav-open .mobile-menu-indicator-arrow {
+        visibility: hidden;
+    }
+
+    .appTabs td.active a {
+        padding-bottom: 7px;
+        position: relative;
+    }
+
+    /* for mybb pages */
+    .mybb-shell .appTabs td:first-of-type {
+       height: 44px;
+    }
+
+    .mybb-shell .appTabs td a:first-of-type {
+        color: #fff;
+        font-weight: bold;
+        z-index: 100;
+        font-weight: normal;
+        padding-bottom: 13px;
+        padding-top: 19px;
+    }
+    
+    .paneTabs ul {
+        margin-left: 0px;
+    }
+
+    .paneTabs ul li:first-of-type {
+        visibility: hidden;
+        height: 0px;
+        width: 0px;
+        overflow: hidden;
+    }
+
+    .flyout-menu {
+        top: 47px;
+        width: 100%;
+        left: 0px;
+        position: fixed;
+        z-index: 1001;
+    }
+
+    #flyoutMenuContent .mybb-tools {
+        width: 15%;
+    }
+
+    #flyoutMenuContent .accordion-wrapper {
+        width: 85%;
+    }
+
+    #global-list-tools {
+        margin: auto;
+    }
+
+    .mybb-shell .topTabs-compact {
+        height: 40px;
+    }
+
+    .mybb-shell div[class^="tabWrapper"]  {
+        padding-top: 2px;
+    }
+
+    #globalNavPageContentArea {
+        top: 44px;
+    }
+
+    #paneTabs {
+        visibility: hidden;
+    }
+
+    .hiddenTabsLink {
+        visibility: hidden;
+        height: 0px;
+    }
+
+    /* open system menu */
+
+    .main-nav-open table.bouncer,
+    .main-nav-open table.bouncer td {
+        height: 667px;
+    }
+
+    .main-nav-open  div[class^="topTabs"] div[class^="tabWrapper"]  .appTabs {
+        height: auto;
+        visibility: visible;
+        float: none;
+        min-width: 100%;
+    }
+    
+    .main-nav-open  div[class^="topTabs"] div[class^="tabWrapper"] {
+        height: 667px;
+        max-height: 667px;
+        overflow-y: auto;
+        padding: 0px;
+        background: transparent;
+        width: 100%;
+    }
+
+
+    .main-nav-open  div[class^="topTabs"] div[class^="tabWrapper"] .appTabs {
+        height: auto;
+        background-color: #333;
+        /*box-shadow: 0px 0px 9px 3px #666; */
+        top: 0px;
+    }
+
+    .main-nav-open table.bouncer .appTabs td {
+        position: relative;
+        border-bottom: 1px solid #999;
+        height: auto;
+    }
+
+    .main-nav-open .appTabs td.active {
+        position: relative;
+    }
+
+    .main-nav-open .appTabs td a {
+        padding-bottom: 20px;
+        font-size: 16px;
+        height: 22px;
+        text-shadow: none;
+        padding-top: 12px;
+    }
+
+    .main-nav-open .appTabs td ul a {
+        padding-bottom: 10px;
+        font-size: 13px;
+        text-shadow: none;
+    }
+
+    .main-nav-open table.bouncer .appTabs td.active {
+        border-bottom: 1px solid #c56fd5;
+    }
+
+   .main-nav-open table.bouncer .appTabs td.active ul a {
+        border-bottom: 0px;
+   }
+
+    .main-nav-open #paneTabs {
+        visibility: visible;
+        float: left;
+        width: 100%;
+        display: block;
+        background-color: #333;
+    }
+
+    .main-nav-open #paneTabs li {
+        width: 100%;
+        float: left;
+        display: block;
+    }
+
+    .main-nav-open #paneTabs li:first-of-type {
+        visibility: hidden;
+        height: 0px;
+    }
+
+    .main-nav-open #paneTabs .more li:first-of-type {
+        visibility: visible;
+        height: auto;
+    }
+
+    .main-nav-open .appTabs .hiddenTabsLink {
+        height: 0px;
+        padding: 0px;
+    }
+
+    ul#overflowULId {
+        display: block;
+        position: relative;
+    }
+
+    ul#overflowULId {
+        display: block;
+        position: relative;
+        background: #333;
+        border: 0px;
+        padding: 0px;
+        margin: 0px;
+        float: left;
+        width: 100%;
+        top: 0px;
+    }
+
+   .main-nav-open .nav .sub ul li a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: #fff !important;
+        padding-left: 0px;
+        font-weight: lighter;
+        font-size: 13px;
+    }
+
+    .mybb-tools li.risktracker a {
+        height: auto;
+        width: auto;
+    }
+
+}
+
+/*Tablet Styles*/
+@media only screen and (min-width:668px) and (max-width:1024px) {
+    .topTabs { 
+        padding-top: 20px;
+    }
+
+    .brandingImgWrap {
+        height: 0px;
+    }
+
+     .global-nav-bar.logout {
+        top: 5px;
+
+    }
+}
+
+/*hamburger css */
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+ 
+.hamburger {
+    padding: 11px 0px 0px 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+}
+
+.hamburger:hover {
+    opacity: 0.7;
+}
+
+.hamburger-box {
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: "";
+    display: block;
+}
+
+.hamburger-inner::before {
+    top: -7px;
+}
+
+.hamburger-inner::after {
+    bottom: -7px;
+}
+
+
+/*
+   * Squeeze
+   */
+
+.hamburger--squeeze .hamburger-inner {
+    transition-duration: 0.075s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--squeeze .hamburger-inner::before {
+    transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+}
+
+.hamburger--squeeze .hamburger-inner::after {
+    transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--squeeze.is-active .hamburger-inner {
+    transform: rotate(45deg);
+    transition-delay: 0.12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--squeeze.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+}
+
+.hamburger--squeeze.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+
+/*theme desarrollado por Ester Muñoz aparicio (emunoz@elearningsolutions.es) para Universidad de Sevilla, Marzo 2018*/
+/* Rojo: #881536 */
+/* Albero: #BE9D56 */
+/* Gris: #616161 */
+
+/* @import url('https://fonts.googleapis.com/css?family=Roboto');*/
+
+/*ELEMENTOS GENERALES DE LA UI - estructuras*/
+/*fondo y fuente de texto general*/
+html, body, #contentFrame, #schemePreview, #schemePreviewBody {
+    background-color: #FFFFFF !important;
+    background-image: url("images/us_fondo.gif") !important;
+}
+/*frame superior*/
+#globalNavPageNavArea {
+    background: url("images/banner.jpg") no-repeat scroll 0 center #FFFFFF;
+    background-size: cover;
+}
+.bgBanner {
+    background: url("images/marca-blanco.png") no-repeat 20px 20px transparent !important;
+    background-size:120px!important;
+}
+.topTabs .tabWrapper-right{
+    background: none transparent;
+}
+.bannerImage {
+    display: none !important;
+}
+table.bouncer {
+    background: none no-repeat 3em bottom transparent;
+}
+/*enlaces rápidos*/
+#quick_links_wrap {
+    top: initial !important;
+}
+.locationPane {
+    background: transparent !important; 
+    box-shadow: none !important;
+}
+.contentPaneWide {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+.portalPane {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+/*menú del curso que se esconde*/
+.navigationPane {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+/*contenido curso + barra*/
+.contentPane {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+.contentPane .shadow {
+    box-shadow: 0!important;
+    border:0;
+}
+.portal .contentBox {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+.containerPortal {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+.portal .container {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+/*contenido*/
+.contentBox {
+    box-shadow: none !important;
+    border: none !important;
+}
+/*área de contenido dentro del curso*/
+#content {
+    background-color: #FFFFFF !important;
+    box-shadow: none !important; 
+    border: none !important;
+}
+/* elementos */
+#content .vtbegenerated, #content .vtbegenerated p {
+    overflow-wrap: break-word;
+}
+/*área de menú*/
+.menuWrap {
+    background: none scroll 0 0 transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #616161 !important;
+}
+.menuWrap-inner {
+    background-color: #FFFFFF !important;
+}
+/* Vista preliminar con altura correcta */
+.student-preview-mode {
+    top:58px !important;
+}
+/* copyright oculto */
+#copyright {
+    display:none;
+}
+/*ELEMENTOS GENERALES DE LA UI - textos y enlaces*/
+/*enlace login/mybb*/
+.global-nav-bar-wrap {
+    background-size: contain;
+    background-origin: content-box;
+} 
+.nav-link {
+    margin-top: 5px; 
+    background-color: transparent !important;
+    color: #FFFFFF;
+}
+.nav-link:hover, .nav-link:focus {
+    background-color:transparent !important;
+    color: #FFFFFF !important;
+}
+/*enlace logout*/
+div.global-nav-bar .logout-link {
+    background-color: transparent !important;
+    margin-right: 1.2em;
+}
+/* avatar y texto EV */
+@media screen and (min-width: 1025px) {
+    #global-nav .global-top-avatar {
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        top:0;
+        left:0;
+        margin: 0 -0.5em;
+    }
+    #topTabs {
+        background-color: rgba(51,51,51,.5) !important;
+    }
+    .topTabs .tabWrapper-right{
+        padding-left: 150px;
+    }
+    .tabWrapper-right:before {
+        content: "Enseñanza Virtual";
+        text-transform:uppercase;
+        font-weight: bold;
+        font-size: 3em;
+        color:#FFFFFF;
+        line-height:66px;
+    }
+}
+/* hamburguesa original*/
+.hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
+    background-color: #FFFFFF;
+}
+/*links para logarse y ayuda en version invitado*/
+.hotSpots, .topGlobalLinks {
+    margin-top: 5px; 
+    background-color: transparent !important;
+}
+.topGlobalLinks a:hover, .topGlobalLinks a:focus {
+    background-color: transparent !important;
+}
+.topGlobalLinks ul li, .topGlobalLinks ul li .home, .topGlobalLinks ul li .help, .topGlobalLinks ul li .logout {
+    background-color: transparent !important;
+}
+#appTabList {
+    margin-top: 1em !important; 
+    background-color: transparent;
+}
+.appTabs a {
+    font-weight: bold;
+    color:  #FFFFFF;
+    background-color: #616161; 
+    font-size: 1.1rem;
+}
+.appTabs td {
+    padding-bottom: 0 !important
+}
+/*ficha activa*/
+.appTabs td.active {
+    border-bottom: none!important;
+}
+.appTabs .active a {
+    background-color:#BE9D56;
+}
+@media only screen and (max-width: 1024px)/* and (min-width: 320px)*/ {
+    /*Para que se vea igual que en grande la parte superior */
+    .bgBanner {
+        background: none no-repeat 0 0 transparent !important;
+    }
+    .contentPane {
+        margin-top:59px;
+    }
+    .global-nav-bar-wrap {
+        background: url("images/marca-blanco.png") center center no-repeat #881536!important;
+        height:45px;
+        background-size: auto 40px!important;
+    }
+    .global-nav-bar.logout {
+        height:30px!important;
+    }
+    #global-nav .nav-link {
+        color:#FFFFFF!important;
+    }
+    .nav-link {
+        height:20px;
+    }
+/*  Para los links de login en modo invitado */
+    .global-nav-bar.logout.clearfix {
+        width:100% !important;
+    }
+    #appTabList {
+        width:100%;
+    }
+    .main-nav-open table.bouncer {
+        background-color: #616161;
+        background-image: none;
+    }
+    .main-nav-open table.bouncer .appTabs td.active {
+       border-bottom:none;
+       background-color: #BE9D56;
+    }
+    .main-nav-open #appTabList td a, .main-nav-open #appTabList td.active a, .main-nav-open #appTabList td.active:hover a, .main-nav-open #appTabList td.active:focus a, .main-nav-open .appTabs li.active a, .main-nav-open .appTabs li.active:hover a, .main-nav-open .appTabs li.active:focus a{
+        text-align:left;
+    }
+    #topTabActive, .appTabs .active a, .appTabs .active a:hover, .appTabs .active a:focus {
+    z-index: 100;
+    }
+    .appTabs a {
+        text-align:left!important;
+        width:1024px;
+    }
+    div#global-nav > .hideoff {
+    color:transparent!important;
+    }
+    #global-nav .global-top-avatar {
+    margin-left: 1.2em;
+    }
+    #badgeTotal{
+    left: 40px !important;
+    }
+}
+/*enlaces en varias partes de la UI*/
+a, .portlet .subCategories li a, .blockGroups .itemHead, .blockGroups .itemHeadOpen, .landingPageColumn h3 a, .cell.gradable a, .attachments a {
+    color: #616161;
+}
+.cell.gradable a, .attachments a {
+    font-size: 100% !important;
+}
+a:hover, .portlet .subCategories li a:hover, .blockGroups .itemHead:hover, .blockGroups .itemHeadOpen:hover, .landingPageColumn h3 a:hover, .cell.gradable a:hover, .attachments a:hover{
+    color: #881536;
+}
+.portlet .subCategories li a:hover, .blockGroups .itemHead:hover, .blockGroups .itemHeadOpen:hover, .cell.gradable a:hover, .attachments a:hover{
+    text-decoration: underline;
+}
+.portlet .portletPath {
+    font-size: 1.2em;
+}
+/* enlaces en el texto del editor */
+#content .vtbegenerated a {
+    color:#881536!important;
+}
+/*textos varios de ayuda el sistema*/
+.mapTabs + .helphelp, .mapTabs ~ .helphelp {
+    background: none repeat scroll 0 0 transparent;
+}
+.taskbuttonhelp,.stepcontent .stepHelp, .stepHelp, .submittitle, .helphelp {
+    font-size: .85em;
+    background: none repeat scroll 0 0 transparent;
+}
+/*título de la página*/
+#pageHeader, #schemePreviewHead, .pageTitle, #pageTitleText{
+    color: #881536 !important; 
+}
+.pageTitle {
+    padding: 12px 30px !important;
+}
+div.pageTitle h1 {
+    color: #881536 !important; 
+} 
+/*títulos de pasos en formularios*/
+h3.steptitle, .steptitle {
+    color: #881536;
+}
+/*títulos calendario*/
+.title-date, .title-text {
+    color: #881536 !important;
+}
+/*notificaciones de sistema*/
+.receipt.good, .adding {
+    background: none repeat scroll 0 0 #616161;
+}
+/*ELEMENTOS GENERALES DE LA UI - tablas y listados*/
+/*mis calificaciones (como alumno)*/
+.gradeTableNew .calculatedRow.row {
+    box-shadow: 0 !important;
+}
+.gradeTableNew .cell, .gradeTableNew .row .cell a {
+    font-size: 100% !important;
+}
+.gradeTableNew .cell.grade .grade-feedback {
+    color:#881536 !important;
+}
+.filterBarHorizontal {
+    background-color: #F6F6F6 !important;
+}
+.filterBarHorizontal ul li a.active {
+    background-color: #616161!important;
+    color:#FFFFFF!important;
+    border: none!important;
+    box-shadow: none!important;
+    font-weight: bold;
+}
+/* centro de calificaciones */
+.cellStatus {
+    background-color: #F6F6F6;
+}
+/*fondos en hover y encabezados de tablas*/
+.inventoryListHead {
+    background-color: #F6F6F6;
+}
+.gbtable th {
+    background-color: #F6F6F6!important;
+}
+/*fondo listados*/
+.paletteItems li.selectedItem, .paletteItems li.active, .paletteItems li.selectedItem:hover, .paletteItems li.selectedItem:focus, .paletteItems li.active:hover, .paletteItems li.active:focus {
+    background-color: #F6F6F6 !important;
+}
+.paletteItems li a {
+    color: #616161 !important;
+}
+/*barras de reordenar*/
+.reorder, .item .reorder, .inventory tr:hover .dndHandle {
+    background-color: #881536;
+}
+/*puller para maximizar el menú cuando está escondido... versión normal*/
+div#puller.pullcollapsed a, div#puller a {
+ background-color: #881536 !important;
+}
+/*puller para maximizar el menú cuando está escondido... versión botón*/
+@media only screen and (max-width: 1024px)/* and (min-width: 320px)*/ {
+    #puller.pullcollapsed {
+        border:0;
+    }
+    #puller, #puller.pullcollapsed {
+        top:59px;
+    }
+    #puller.pullcollapsed a:after {
+        color:#FFFFFF;
+    }
+    #puller a, #puller a:hover, #puller a:focus, #puller.pullcollapsed a, #puller.pullcollapsed a:hover, #puller.pullcollapsed a:focus {
+        border-radius:50%;
+    }
+}
+/*ELEMENTOS GENERALES DE LA UI - botones*/
+/*botones de acción*/
+.button-1 {
+    color: #FFFFFF !important;
+    background-color: #881536 !important;
+    box-shadow: none !important;
+    border: #881536!important;
+}
+.button-1:hover {
+    background-color: #881536 !important;
+    border: #881536 !important;
+}
+.button-2 {
+    box-shadow: none !important;
+}
+.button-3 {
+    color: #FFFFFF !important;
+    background-color: #881536 !important;
+    box-shadow: none !important;
+    border: #881536!important;
+}
+.button-3:hover {
+    background-color: #881536 !important;
+    color: #FFFFFF !important;
+    border: #881536!important;
+}
+.button-4 {
+    color: #F6F6F6 !important; 
+    background-color: #616161 !important;
+    box-shadow: none !important;
+    border: #616161 !important;
+}
+/* Botón de marcar como revisado */
+.button-5 {
+    color: #F6F6F6 !important; 
+    background-color: #616161 !important;
+    box-shadow: none !important;
+    border: #616161 !important;    
+    padding: 6px 16px 7px !important;
+}
+.genericButton, .pageTitle .genericButton, .retention-details .action-buttons .nav > li > a, .lightbox-container .action-buttons .nav > li .button-3 {
+    background: none!important;
+    color: #F6F6F6 !important; 
+    background-color: #616161 !important;
+    box-shadow: none !important;
+    border: #616161 !important;    
+    padding: 6px 16px 7px !important;    
+}
+input[type="button"][disabled], input[type="button"][disabled]:hover {
+    color: #AAAAAA !important;
+    background-color: #DADADA !important;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    box-shadow: none !important;
+    padding: .5625rem 1.125rem .625rem;
+    border: none !important;
+}
+.button-4-img {
+    background-color: transparent !important;
+}
+#toolsSearchBox + .button-4, .treeContainer .tree li a.button-4-img, .student-preview-ribbon .button-3 {
+    background: none repeat scroll 0 0 #616161!important;
+    border: #616161 !important;
+    color: #F6F6F6 !important;
+    box-shadow:none !important;
+}
+.keyboardAccess .button-3, .keyboardAccess .button-4{
+    margin: 0.5em 0.4em 0.5em 0;
+}
+ .columnActions .button-4 {
+    margin: 0.5em 0.4em 0 0;
+}
+.browse {
+    box-shadow:none !important;
+}
+.browseIcon, .browseIcon:hover {
+    background-color: transparent; 
+    box-shadow: none;
+}
+/*botones backlink, como Aceptar y OK en la parte inferior*/
+.backLink a:before {
+    color: #881536 !important;
+}
+.backLink a:hover, .backLink a:hover:before {
+    color: #881536 !important;
+}
+.backLink a {
+    color: #616161;
+}
+/*botones responder, citar, etc. en foro*/
+.threadButtons a.reply, .threadButtons a.reply:hover, .threadButtons a.reply:focus {
+    color: #FFFFFF !important;
+    background-color: #881536 !important;
+    background-image: none!important;
+    border-radius: 4px !important;
+    font-size: 0.875rem !important; 
+    box-shadow: none !important; 
+    padding: 6px 16px 7px !important;
+    border: none !important;
+}
+.threadButtons a.browse, .threadButtons a.browse:focus, .threadButtons a.browse:hover {
+    color: #FFFFFF !important;
+    background-color: #616161 !important;
+    background-image: none!important;
+    border-radius: 4px !important;
+    font-size: 0.875rem !important;
+    box-shadow: none !important; 
+    padding: 6px 16px 7px !important;
+    border: none !important;
+}
+/*botones calendario*/
+#ical, .fc-button-main, .fc-button-main:hover {
+    color: #FFFFFF !important;
+    background: none scroll 0 0 #881536 !important;
+    border-radius: 4px !important;
+    border: none !important;
+    text-shadow: none !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    padding: .5em!important;
+} 
+#ical {
+    font-size: 100%!important;
+}
+.button-img-create{
+    background: url("images/plus.png") 0 0 no-repeat !important;
+}
+.button-img-next{
+    background: url("images/arrow-fwd.png") 0 0 no-repeat!important;
+}
+.button-img-prev{
+    background: url("images/arrow-rew.png") 0 0 no-repeat!important;
+}
+/*botones en ventana superpuesta*/
+.ui-button-text-only, .ui-dialog-buttonset .ui-button-text-only {
+    color: #FFFFFF !important;
+    background: none scroll 0 0 #881536 !important;
+    border-radius: 4px !important;
+    border: none;
+    text-decoration: none;
+    font-size: 0.875rem !important;
+    font-weight: normal;
+}
+/* Botones panel config. asistencia */
+.attendance-app .classic-peek-panel .bb-offcanvas-panel button.bb-close {
+    background-color: #881536!important;
+}
+.attendance-app .classic-peek-panel .bb-offcanvas-panel button.bb-close:after {
+    background-color: transparent;
+    border-right-color: #616161;
+}
+/*Botones en mis calificaciones */
+.eval-links .genericButton, .eval-links .button-4, .eval-links input.genericButton[type="button"], .eval-links.horizontal input, .eval-links .genericButton:hover, .eval-links .button-4:hover, .eval-links input.genericButton[type="button"]:hover, .eval-links.horizontal input:hover, .eval-links .genericButton:focus, .eval-links .button-4:focus, .eval-links input.genericButton[type="button"]:focus, .eval-links.horizontal input:focus {
+    color: #FFFFFF !important;
+    background-color: #881536!important;
+    padding:1em !important;
+}
+/* botones de paginación */
+.rumble h3 + ul > li > a, .rumble_top h3 + ul > li > a {
+    color: #616161;
+    box-shadow: none;
+} 
+.rumble_top a, .rumble a, .paging a {
+    color: #616161;
+    box-shadow: none !important;
+    background-color:transparent;
+}
+/*enlaces para pasar de página en listados sin fondo, y sin decoración al hacer hover*/
+a.jumpToPageOpen {
+    color: #616161 !important;
+}
+a.jumpToPageOpen:focus, a.jumpToPageOpen:hover{
+}
+/*menu paginación en tablas*/
+.jumptopage {
+    background-color: #FFFFFF;
+}
+@media only screen and (max-width: 1024px)/* and (min-width: 320px)*/ {
+    /* padding 15px a los botones de eliminar, etc de las tablas en tamaño tablet*/
+}
+/*BARRAS Y BLOQUES VARIOS*/
+/* detalles administración */
+/*color del + en administración*/
+.version span:before {
+    color: #881536;
+}
+/*número de publicaciones no leídas y esperando moderación en un foro*/
+.unread-posts, .need-moderation, .unread-replies-to-me-posts {
+    color: #FFFFFF !important;
+    background: none repeat scroll 0 0 #BE9D56 !important;
+    border: none!important;
+}
+.unread-posts a {
+    color: #FFFFFF!important;
+}
+/*áreas de calificación*/
+#currentAttempt .attemptHeader, #currentAttempt .gradeSubmissionPanel, #currentAttempt .panelHandle {
+    background-color: #F6F6F6 !important;  
+}
+/* Navegacion entre usuarios en sitios como assignments*/
+.user-navigator {
+    background: none #DADADA;
+}
+/* encabezados en zonas de calificación */
+.gradingPanelHeader, .gradeHeader, .maximizer_btn, .gradingPanelCollapse_btn.expanded, .resizeControls, .gradingPanelCollapse_btn {
+    background-color: #881536!important;
+}
+/* barra busqueda foros */
+.thread-detail-page #actionbar.actionBar {
+    box-shadow:none!important;
+    background:none #616161!important;
+    border: 0!important;
+}
+.thread-detail-page .actionBar #navsecondary .secondaryButton > a {
+    color: #F6F6F6 !important; 
+    background-image: none !important;
+    background-color: #616161!important;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+}
+.thread-detail-page .actionBar #navsecondary .secondaryButton:hover > a{
+    color: #F6F6F6!important;
+}
+/*barra para cambiar la vista de listado a miniaturas y similar*/
+div.localViewToggle {
+    background: none repeat scroll 0 0 transparent !important;
+    box-shadow: none;
+    border: none;
+}
+div.localViewToggle li {
+    background-color: #BE9D56;
+}
+.localViewToggle a {
+    color: #FFFFFF;
+}
+.localViewToggle a.active, .localViewToggle a.active:hover, .localViewToggle a.active:focus {
+    color: #616161;
+    background: #FFFFFF;
+    border: none!important;
+}
+.localViewToggle a.active:before, div.localViewToggle h2:before, .localViewToggle a.active:after, div.localViewToggle h2:after, .filePickerWidget .localViewToggle a.active:after {
+    border-bottom-color: transparent!important;
+}
+/* barra botonera inferior fija */
+.submitStepFixed {
+    background-color:#DADADA !important;
+    box-shadow:none !important;
+    border:0;
+}
+/* Popup confirmación eliminar área */
+.lb-container {
+    padding-top: 4px !important;
+}
+div.lb-wrapper div.lb-content {
+    min-height: 300px;
+}
+/* boton cambiar a modo edición */
+.modeSwitch {
+    background-color:#DADADA;
+    border: 1px solid #616161;
+    box-shadow: none;
+}
+.read-off{
+    color:#616161;
+}
+.read-on {
+    color: #616161;
+}
+.read-on:hover {
+    background-color:#881536;
+}
+.switcherLabel {
+    color: #616161!important;
+}
+/* Borde cajetillas */
+input[type="text"], input[type="password"], select {
+    border-bottom: 1px solid #616161;
+}
+/* Preguntas de varias respuestas fix alinear texto con opción y casilla */
+.multiple-answer-table td label p, .multiple-choice-table td label p{
+    margin-top: 0!important;
+    margin-bottom: 0!important;
+}
+/*ELEMENTOS GENERALES DE LA UI - menús, submenús*/
+/*Menús de acción y submenús, fondos*/
+/*menú emergente en el +*/
+#courseMenuPalette_actionbar ul, .actionBarMicro #courseMenuPalette_actionbar ul {
+    background-color: #FFFFFF !important;
+    color: #616161 !important;
+}
+#courseMenuPalette_actionbar ul a:hover, #courseMenuPalette_actionbar ul a:active, #courseMenuPalette_actionbar ul a:focus, .actionBarMicro #courseMenuPalette_actionbar ul a:hover, .actionBarMicro #courseMenuPalette_actionbar ul a:active, .actionBarMicro #courseMenuPalette_actionbar ul a:focus{
+    color: #881536 !important;
+    background-color: #FFFFFF !important;
+}
+/*estos aparecen dentro de los cursos*/
+.quickAddPal, .keyboardAccess {
+    background-color: #FFFFFF!important;
+    color: #616161;
+}
+/*cabeceras de menu dentro del curso*/
+.keyboardAccess label, .flyout h3, li span.labelMenuItem {
+    background-color: transparent !important;
+    color: #881536 !important;
+    text-shadow: none;
+}
+/* en menus contextuales*/
+.cmdiv ul li a:hover,.cmdiv ul li a:active,.cmdiv ul li a:focus {
+    background: #FFFFFF !important;
+    color: #881536 !important;
+}
+/* en tablas y actionbar*/
+.nav .sub ul li a:hover, .nav .sub ul li a:focus, .nav .sub ul li a:active {
+    background: #FFFFFF !important;
+    color: #881536 !important;
+}
+/* en tablas */
+.rumble .nav .sub ul li a:active, .rumble .nav .sub ul li a:focus, .rumble .nav .sub ul li a:hover, .rumble_top .nav .sub ul li a:active, .rumble_top .nav .sub ul li a:focus, .rumble_top .nav .sub ul li a:hover {
+    background: #FFFFFF !important;
+    color: #881536 !important;
+}
+    /* pantalla búsqueda preguntas */
+    .noBatchActions {
+        font-size: .8em !important;
+    }
+@media only screen and (max-width: 1024px)/* and (min-width: 320px)*/ {
+    /* molaría hacer que las rumble .nav .sub se viesen correctamente en tamaño tablet, quedan muy abajo y no son usables */
+}
+/*ELEMENTOS GENERALES DE LA UI - módulos y portlets*/
+/*encabezados de los módulos y portlets*/
+#moduleTitle, .portlet h2 {
+    text-shadow: none !important;
+    background-color: transparent !important;
+    color: #881536!important;
+    text-decoration: none;
+    border: none !important;
+    box-shadow: none !important;
+    font-weight: normal;
+    font-size: 2em;
+}
+/*texto encabezado en portlets*/
+.portlet h3 {
+    font-weight: bold;
+    color: #881536;
+}
+/*zona contenido portlets*/
+.portlet, .collapsible {
+    border: none !important;
+}
+.collapsible {
+    box-shadow: 2px 2px 2px 0px rgba(200,200,200,.75);    
+    background-color: #F6F6F6 !important;
+    border-top:1px solid #881536!important;
+
+}
+.noItems {
+    text-align: left !important;
+}
+/* portlet de cursos con sangrados */
+.portlet .portletList-img > li {
+    padding-left: 10px!important;
+}
+.portlet .portletList-img > li:before {    
+    font-family: 'FontAwesome';
+    content: '\f0da';
+    color: #881536;
+}
+.portlet .courseInformation {
+    text-indent:0!important;
+}
+/* Portlet de login */
+.portlet #loginBoxFull {
+    width:100%;
+}
+.portlet #loginBoxFull h3{
+    display:none;    
+}
+.portlet #loginBoxFull li label {
+    color: #616161;
+    font-size: 1.2em;
+}
+.portlet #loginBoxFull input[type="text"], .portlet #loginBoxFull input[type="password"] {
+    background-color: #F6F6F6;
+    border: 1px solid #616161;
+    border-radius: 0px;
+    color: #616161;
+    -moz-transition: all 0.5s ease 0s; 
+    -webkit-transition: all 0.5s ease 0s; 
+    transition: all 0.5s ease 0s;
+}
+.portlet #loginBoxFull input[type="text"]:hover, .portlet #loginBoxFull input[type="text"]:focus, .portlet #loginBoxFull input[type="password"]:hover, .portlet #loginBoxFull input[type="password"]:focus{
+    background-color: #FFFFFF; 
+    border-color: #881536;
+}
+.portlet #loginBoxFull .forgot a {
+    border-color: #616161 !important;
+    font-size: 100% !important;
+    text-decoration: none;
+    margin-top:10px;
+}
+.portlet #loginBoxFull .forgot a:focus, .portlet #loginBoxFull .forgot a:active, .portlet #loginBoxFull .forgot a:hover {
+    border-color: #881536 !important;
+    color: #881536!important; 
+    font-size: 100% !important;
+    text-decoration: none;
+}
+.portlet #loginBoxFull  li input[type="submit"] {
+    color: #FFFFFF !important;
+    background-color: #881536 !important;
+    box-shadow: none !important;
+    border: #881536!important;
+    font-size: .8em !important;
+    padding: 6px 16px 7px;
+    margin-top:10px;
+}
+.portlet #loginBoxFull  li input[type="submit"]:hover {
+    background-color: #881536 !important;
+    border: #881536 !important;
+}
+/* Login de terceros */
+.portlet #loginBoxFull {
+    margin-bottom: 350px;
+}
+.portlet #loginBoxFull form {
+    display:none;
+}
+.portlet #loginBoxFull #redirectProvidersDropdownButton {
+    display: none;
+    }
+.portlet #loginBoxFull #loginRedirectProviders {
+    margin-top: 10px!important;
+}
+.portlet #loginBoxFull #loginRedirectProviderList {
+    display: block;
+    border:none;
+    background-color: transparent;
+}
+.portlet #loginBoxFull #loginRedirectProviderList li{
+    list-style: none;
+    background: transparent;
+    padding: 0;
+    }
+.portlet #loginBoxFull #loginRedirectProviderList li a{
+    color: #616161;
+    font-size: 1em;
+    }
+.portlet #loginBoxFull #loginRedirectProviderList li a:hover, .portlet #loginBoxFull #loginRedirectProviderList li a:focus{
+    text-decoration: none;
+    backgroudn-color: transparent;
+    }
+.portlet #loginBoxFull #loginRedirectProviderList li a img {
+    display: block;
+    margin:0;
+    height: auto;
+    width: 100%;
+    margin-bottom:2em;
+    border:1px solid;
+    }
+/* Qwickly */
+.qRow {
+    font-size: 100% !important;
+}
+/*Availability en Qwickly*/
+#makeavail.qSlide, #needsgrading.qSlide {
+    background: none repeat scroll 0 0 #F6F6F6;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 12px 0 8px 12px;
+}
+.collapsible .qSlide table {
+    font-size: 100% !important;
+}
+/* Settings for qwickly */
+.qSettingsTab {
+    font-size: 0.8em !important;
+}
+/* correos alineados con nombres en portlet de grupos */
+.countList li {
+    height: 22px;
+}
+/* marcador novedad en modulo noticias*/
+.fas.nuevo {
+    color:#881536!important;    
+}
+/* marcador de áreas en módulos soporte */
+.fas.ico-grande {
+     font-size: 30px;
+     float: left;
+     padding: .2em;
+     color: #ffffff;
+     background-color: #881536;
+     border-radius: 50%;
+     margin-right: .1em;
+}
+.redes-sociales {
+   text-align:center!important;
+}
+.redes-sociales ul {
+    padding:0;
+}
+.redes-sociales ul li {
+    list-style-type:none !important;
+    display: inline-block;
+    margin: 0 10px;
+}
+.redes-sociales li a span{
+    display: none;
+}
+@media only screen and (max-width: 1024px)/* and (min-width: 320px)*/ {
+    .portlet, .collapsible {
+        box-shadow: none;
+    }
+/*     molaría hacer que las rumble .nav .sub se viesen correctamente, quedan muy abajo y no son usables */
+}
+/*BARRAS DE NAVEGACIÓN*/
+/*textos fichas superiores*/
+/*botones y texto submenú administración / curso*/
+.path a, .simplePath a {
+    color: #616161;
+}
+.path .placeholder, .simplePath .placeholder {
+    color: #000000;
+}
+.path a:hover, .path a:focus, .simplePath a:hover, .simplePath a:focus {
+    color: #881536;
+}
+/*fichas en la barra de selección de ficha*/
+.paneTabs a {
+    color: #616161;
+}
+.paneTabs a:hover, .paneTabs a:focus {
+    color: #881536 !important;
+}
+@media only screen and (max-width: 1024px)/* and (min-width: 737px)*/{
+    #breadcrumbs  {
+        top:59px;    
+    }
+    .mobile-course-instructor-settings-button {
+        top:59px;
+    }
+    .student-preview-control a:after{
+        right: auto!important;
+        top: 2em;
+    }
+    .breadcrumb-controls {
+        background-color: #881536;
+    }
+    .student-preview-control, .modeSwitchWrap, .theme-switch-wrapper {
+        border: none!important;
+    }
+    .helpLink {
+        border: none!important;
+        padding-top:17px;
+        float:right;
+        text-align:right;
+    }
+    .switcherLabel {
+    color: #FFFFFF!important;
+    }
+}
+/*BARRA DE ACCIÓN*/
+.contentPaneWide .actionBar, .contentBox .actionBar, .actionBar {
+    background: none repeat scroll 0 0 #BE9D56 !important; 
+}
+.actionbar .nav .sub ul{
+     background: none repeat scroll 0 0 #FFFFFF!important;
+}
+/*botones*/
+.actionBar .mainButton > a, .actionBar .secondaryButton > a, .actionBar .mainButton h2 > a, .actionBar .secondaryButton h2 > a {
+    color: #FFFFFF !important;
+}
+.actionBar .mainButton > a:hover, .actionBar .secondaryButton > a:hover, .actionBar .mainButton h2 > a:hover, .actionBar .secondaryButton h2 > a:hover {
+    color: #FFFFFF !important; 
+    background: none scroll 0 0 #616161 !important;
+}
+/*BARRA DE ACCIÓN MICRO EN CURSO Y CONTENT*/
+/*fondo*/
+.actionBarMicro {
+    background-color: #616161 !important;
+    border: none !important;
+    box-shadow: none;
+}
+.actionBarMicro .mainButton > a, .actionBarMicro .secondaryButton > a, .actionBarMicro .mainButton h2 > a, .actionBarMicro .secondaryButton h2 > a  {
+    background: none scroll 0 0 transparent!important;
+}
+.actionBarMicro .mainButton > a:hover, .actionBarMicro .secondaryButton > a:hover,  .actionBarMicro .mainButton h2 > a:hover, .actionBarMicro .secondaryButton h2 > a:hover  {
+    background: none scroll 0 0 transparent!important;
+}
+/* reemplazo de imagenes en el menú */
+/*MENÚ DEL CURSO*/
+/* fondos */
+#courseMenuPalette ul {
+    background-color: transparent !important;
+}
+#courseMenuPalette {
+    background-color: #FFFFFF !important;
+}
+#courseMenuPalette div.navPaletteContent {
+    background-color: transparent !important;
+    color: #616161 !important;
+}
+#courseMenuPalette ul#courseMenuPalette_actionbar ul{
+    background-color: #FFFFFF!important;
+}
+/*cabeceras menú*/
+#controlPanelPalette .navPaletteContent h3 a,  #myGroups .navPaletteContent a{
+    color:#881536;
+}
+/* texto admin. cursos y cabeceras panel control*/
+.menuWrap h2, .menuWrap h4{
+    color: #616161 !important;
+}
+.navPaletteContent a, div.treeContainer ul.tree li.subhead h4.treeSubhead-collapsed a {
+    color: #616161 !important;
+}
+.navPaletteContent h3 a {
+        color:#881536;
+}
+/* enlaces */
+#courseMenuPalette a, #controlPanelPalette_contents a, #courseMenuPalette span, #controlPanelPalette_contents span {
+    color: #616161!important;
+}
+#courseMenuPalette a:hover, #courseMenuPalette span:hover, #controlPanelPalette_contents a:hover, #controlPanelPalette_contents span:hover {
+    color: #881536!important;
+}
+#courseMenuPalette ul a:hover {
+    color: #881536!important;
+}
+#courseMenuPalette div.navPaletteContent ul li a:hover, #courseMenuPalette div.navPaletteContent ul li a:hover span {
+    color: #881536!important;
+/*     background-color: #EFEDE3!important; */
+} 
+#courseMenuPalette div.navPaletteContent ul li a.cmimg {
+/*     border: none; */
+}
+#controlPanelPalette_contents a {
+    color: #616161!important;
+}
+#controlPanelPalette_contents a:hover {
+    color: #616161!important;
+} 
+.navPaletteContent a#searchGo.genericButton:hover {
+    color: #FFFFFF!important;
+}
+/*enlaces del panel de control*/
+.controlpanel .submenu a:hover, .controlpanel .submenu a.here, .controlpanel .submenu a:focus {
+    color: #881536!important;
+} 
+/* cabeceras panel de control abiertas */
+#controlPanelPalette_contents a.comboLink_active{
+    color: #881536 !important;    
+}
+#courseMenuPalette .courseMenu a:hover span, #courseMenuPalette .courseMenu  a:focus span {
+color: #881536!important;    
+}
+/* título curso y subcabeceras*/
+#courseMenuPalette_paletteTitleHeading .navPaletteTitle h3 a{
+    color: #881536!important;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+/* botón de quick enrol */
+.singleControl {
+    text-shadow: none!important;
+    background-color: #616161; 
+}
+.singleControl a, .navPalette .discover a {
+    color:#FFFFFF!important;
+}
+/* Eliminar completamente los enlaces tipo botón del menú */
+div.buttonCm ul.courseMenu li, div.buttonCm ul.courseMenu li.here {
+    background-image: none !important;
+}
+/* encabezados del menú de content */
+div.treeContainer ul.tree li.subhead h4 a {
+    color: #616161!important;
+}
+/*FORO*/
+/*cuenta de no leidos en listado de foros*/
+.unread-count {
+    background-color: #BE9D56 !important;
+}
+/* cuenta de no leidos a cero */
+.unread-count.none{
+  background-color: #616161 !important;
+}
+/* área de mensaje */
+.message-wrapper-inner{
+    box-shadow: none !important;
+}
+/*CALENDARIO*/
+/*fondo de "hoy" en el calendario pequeño */
+.ui-widget-content .ui-state-highlight, .ui-widget-content .ui-state-default {
+    box-shadow: none!important;
+}
+/*barra calendario*/
+.vertical_filter .stream_header {
+    background-color: transparent !important;
+}
+.vertical_filter .left_stream_wrapper {
+    box-shadow: none !important;
+}
+/* MÓDULO DE CONTENIDOS */
+#tocCart.sideTOC {
+    height:100%!important;
+}
+.sideTOC, .tocWrapper {
+    background-color: #FFFFFF;
+    border: 0!important;
+}
+ul#tocTree li {
+    background: none #616161;
+    margin: .2em;
+    display:block;
+    padding:.2em;
+}
+ul#tocTree span, a.tocItem {
+    color: #FFFFFF;
+    white-space:normal;
+}
+img[src*="lineints.gif"],img[src*="lineang.gif"], img[src*="document_ti.gif"],img[src*="folderopen_ti.gif"],img[src*="plusnb.gif"],img[src*="minusnb.gif"] {
+    display:none;
+} 
+.sideTOC #tocTreeWrapper {
+    height: 100%!important;
+    overflow:visible;
+}
+div.treeContainer ul.tree li a.itemActive, #learningUnitToc ul.tree li a.itemActive, ul.tree li a.itemActive {
+    border: 0!important;
+    background:  transparent;
+}
+div.treeContainer ul.tree li a.itemActive:before, #learningUnitToc ul.tree li a.itemActive:before, ul.tree li a.itemActive:before {
+    content:"\f111";
+    color: #FFFFFF;
+    font-size: 100%;
+    font-family: FontAwesome;
+    padding-right: .4em;
+}
+/*MYBLACKBOARD*/
+/*flyout sidebar*/
+.flyout-menu, .flyout-menu .mybb-tools {
+    background-color: #881536;
+}
+/*enlaces*/
+.flyout-menu a {
+    color: #616161 !important;
+}
+.flyout-menu a:hover {
+    color: #881536 !important;
+}
+/*flyout titulos*/
+.flyout-menu .accordion_toggle span, .flyout-menu .accordion_toggle:hover span {
+    background-color: #FFFFFF;
+    color: #881536 !important;
+}
+/*flyout contenido*/
+.accordion_content {
+    background-color: #FFFFFF!important;
+    box-shadow: none!important;
+}
+.accordion_content li a {
+    color: #616161;
+    background-color:transparent!important;
+    font-size: 100%;
+    text-decoration: none;
+}
+.bottom-buttons a:hover, .bottom-buttons a:focus {
+    backgroud-color: #F6F6F6 !important;
+}
+@media only screen and (max-width: 1024px)/* and (min-width: 320px)*/{
+    .flyout-menu {
+        z-index: 9999!important;
+    }    
+}
+/*fondos y estructuras*/
+.iframe-wrap {
+    border-width: 0!important;
+}
+.body.mybb-shell {
+    background-color: #FFFFFF !important;
+    background-image: none !important;
+}
+.side-nav ul li.active a {
+    background-color: rgba(255,255,255,.5) !important;
+    box-shadow: none!important;
+    border: 0 !important;
+}
+.side-nav, .side-nav .more-tools {
+    background-color: #881536 !important;
+}
+.stream_page_left {
+    background: none repeat scroll 0 0 #FFFFFF !important;
+}
+.stream_right { 
+    box-shadow: none!important;
+}
+.stream_header, .tool-header {
+    border: none!important;
+}
+.mybb-column-wrapper {
+    background: none repeat scroll 0 0 #FFFFFF !important;
+}
+.vertical_filter .stream_header, .current_filter {
+    box-shadow: none!important;
+}
+div#column_1.mybb-column {
+    box-shadow: none!important;
+}
+.detail-hgroup #coursecontent1-stop:hover {
+    box-shadow: none!important;
+}
+.due_date:after { 
+    box-shadow: none!important;
+}
+div#dynamic_filters_alerts.stream_dynamic_filters {
+    background: none repeat scroll 0 0 #FFFFFF !important;
+}
+.vertical_filter .stream_list_filter .active, .vertical_filter .stream_dynamic_filters .active {
+    background-color: #FFFFFF!important;
+    background-image: none;
+    border: none!important;
+    box-shadow: none!important;
+    text-shadow: none;
+}
+div.stream_settings {
+    background: none repeat scroll 0 0 #FFFFFF !important;border: none!important;
+}
+.grade-item, .grade-item:hover {
+    background-color: #FFFFFF!important;
+    background-image: none; 
+    border: none!important;
+    box-shadow: none!important;
+    text-shadow: none;
+}
+.grade-item.active, .grade-item.active:hover {
+    background-color: #F6F6F6 !important;
+    background-image: none;
+    border-radius: 0px;
+    box-shadow: none!important;
+}
+/*enlaces en My Blackboard*/
+.mybb-overview a, .streamOverview-more-items a,.vertical_filter .stream_list_filter a, .vertical_filter .stream_dynamic_filters li a, .stream_item .stream_context .inlineContextMenu a.browse, .stream_context a, .stream_settings li, .stream_settings li a, .detail-hgroup #coursecontent1-stop, .risk-factors-list ul li a, .stream_settings li input[checked="checked"] + label, .filter-content-wrapper a, .stream_user a, .stream-detail-page a, .mybb-column-wrapper a, .detail-hgroup a {
+    color:#616161!important;
+}
+.mybb-overview a:hover, .vertical_filter .stream_list_filter a:hover, .vertical_filter .stream_dynamic_filters li a:hover, .stream_settings li a:hover, .detail-hgroup #coursecontent1-stop:hover, .stream_settings li input[checked="checked"]:hover + label, .stream_context a:hover, .stream_settings li:hover, .stream_settings li:focus, .mybb-column-wrapper a:hover, .filter-content-wrapper a:hover, .stream_user a:hover, .stream-detail-page a:hover, .detail-hgroup a:hover {
+    color: #881536 !important;
+}
+/*títulos y otros textos en My Blackboard*/
+.mybb-column h1, .stream_header h1, .tool-header h1 {
+    color: #881536 !important;
+}
+h3.section-title, .vertical_filter .stream_dynamic_filters h5 {
+    color: #881536 !important;
+} 
+.stream_show_more_data, .stream_details, .announcementBody, .announcementTitle {
+    text-shadow: none!important;
+    font-family: inherit;
+}
+#MessagesOverview, .message-text {
+    font-family:inherit;
+}
+/*botones My Blackboard*/
+.wall-poster-actions .button-1 {
+    color: #FFFFFF !important;
+    background-color: #881536 !important;
+    box-shadow: none !important;
+    border: #881536!important;
+} 
+.wall-poster-actions .button-1:hover {
+    background-color: #881536 !important;
+    border: #881536 !important;
+}
+.wall-poster-actions .button-2 {
+    box-shadow: none !important;
+}
+.detail-hgroup a.button-3 {
+    color: #FFFFFF !important;
+    background-color: #881536 !important;
+    box-shadow: none !important;
+    border: #881536!important;
+}
+.detail-hgroup a.button-3:hover {
+    background-color: #881536 !important;
+    color: #FFFFFF !important;
+    border: #881536!important;
+}
+/*ENCUESTAS INSTITUCIONALES / LOGROS*/
+/*botonera/tabs en periodos de respuesta*/
+.lesson-plan-page .mapTabs , .mapTabs {
+    background: none repeat scroll 0 0 #BE9D56 !important;
+    box-shadow: none!important; 
+    text-shadow: none !important; 
+    padding-left:15px;
+}
+.mapTabs ul li:first-child a, .mapTabs ul li:first-child h3 {
+    padding-left: 14px;
+}
+.mapTabs ul li {
+    color: #FFFFFF !important;
+    background-color: #BE9D56 !important;
+}
+/*Enlaces en los tabs*/
+.mapTabs ul li a, .lesson-plan-page .mapTabs ul li a {
+    color: #FFFFFF!important; 
+    border: 0;
+}
+.mapTabs ul li a:hover, .lesson-plan-page .mapTabs ul li a:hover  {
+    background-color: #616161 !important;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+/*tab activa*/
+.lesson-plan-page .mapTabs ul li.active h3, .mapTabs ul li.active h3, .containerTabs .active h3 {
+    background: none repeat scroll 0 0 #616161 !important;
+    color: #FFFFFF;
+}
+/*personas implicadas en el sondeo*/
+.survey-count {
+    background-color: #BE9D56;
+    color: #FFFFFF;
+}
+.survey-count span {
+    color: #FFFFFF;
+}
+/*cajetillas con opciones*/
+.tab_content.deployment_type_group_content {
+    background-color: #F6F6F6;
+}
+.tab_content .formElements {
+    background-color: #F6F6F6;
+}
+.toggle-button.active:after {
+    box-shadow: none;
+}
+.toggle-button.active {
+    background-color: #F6F6F6;
+    border-radius: 0;    
+}
+/* Para que los logros tengan una barra de acción normal */
+.mapTabs ul.containerTabs {
+    position:relative!important;
+}
+/* Ranking */
+.studentAchViewLeaderboardRank {
+    background: none #881536!important;
+}
+.corner-banner {
+    background:none!important;
+}
+.achievementCardEarned .achievement-inner {
+    border-color: #881536!important;
+}
+.filterDiv li a.selectedFilter {
+    background-color: #881536!important;
+    color:#FFFFFF!important;
+    border: none!important;
+    box-shadow: none!important;
+}
+/* CENTRO DE RETENCION */
+/* Popups con información riesgo */
+.risk-factors-list {
+    background-color: #FFFFFF!important;
+    box-shadow: none!important;
+    color: #333333!important;
+}
+.risk-factors-list .nav > li > a, .inventoryListContainerDiv table .retention-details {
+    background-color: #FFFFFF !important;
+    box-shadow: none!important;
+    color: #333333!important;
+    padding: 20px 10px 10px 10px;
+    border: 1px solid #666666;
+    border-radius: 3px;
+}
+.risk-factors-list ul li a:hover {
+    color: #FFFFFF!important;
+}
+.retention-details .individual-rules li {
+    color: #881536!important;
+}
+.retention-details .overall-performance {
+    box-shadow: none!important;
+}
+.inventoryListContainerDiv table thead th span a {
+    color: #881536!important;
+}
